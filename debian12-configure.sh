@@ -30,10 +30,17 @@ pushd /home/$USERNAME/Downloads
 
     # VSCode GPG
     curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o /etc/apt/keyrings/microsoft-archive-keyring.gpg
-    chmod 644 /etc/apt/keyrings/docker.gpg
+    chmod 644 /etc/apt/keyrings/microsoft-archive-keyring.gpg
 
     echo "deb [arch=amd64,arm64,armhf signed-by=/usr/share/keyrings/microsoft-archive-keyring.gpg] https://packages.microsoft.com/repos/vscode stable main" \
         > /etc/apt/sources.list.d/vscode.list
+
+    # NodeJS GPG @ref https://github.com/nodesource/distributions#debian-versions
+    curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+    chmod 644 /etc/apt/keyrings/nodesource.gpg
+
+    echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" \
+    > /etc/apt/sources.list.d/nodesource.list
 popd
 
 apt update
@@ -44,8 +51,8 @@ apt install -y \
     kde-standard  openssh-server \
     neofetch neovim nala \
     docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin \
-    kubectl code \
-    flatpak plasma-discover-backend-flatpak
+    flatpak plasma-discover-backend-flatpak \
+    kubectl code nodejs
 
 # Post installation
 groupadd docker
