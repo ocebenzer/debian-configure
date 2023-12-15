@@ -55,7 +55,7 @@ echo
 echo .. Done!
 echo you might want check if everything is ok:
 echo check "VSCode extensions"
-echo run "'sudo dpkg-reconfigure lightdm'" and select sddm for kde-plasma as your default desktop environment
+echo run "'sudo dpkg-reconfigure lightdm'" and select sddm for kde-plasma as your default desktop environment, also select Plasma X11 over Plasma Wayland due to API issues
 echo run "'docker run hello-world'" after reboot
 
 echo install your favorite flatpak apps as non-root:\n
