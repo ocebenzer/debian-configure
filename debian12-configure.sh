@@ -45,14 +45,15 @@ popd
 
 apt update
 apt install -y \
-    gcc gdb cmake clangd \
+    gcc gdb doctest-dev cmake clangd \
     maven default-jdk \
+    nodejs \
     python3 python3-ipykernel \
     kde-standard  openssh-server \
     neofetch neovim nala \
     docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin \
     flatpak plasma-discover-backend-flatpak \
-    kubectl code nodejs
+    kubectl code
 
 # Post installation
 groupadd docker
