@@ -45,14 +45,13 @@ popd
 
 apt update
 apt install -y \
+    kde-standard openssh-server atool neofetch neovim nala \
+    flatpak plasma-discover-backend-flatpak \
     gcc gdb doctest-dev cmake clangd \
     maven default-jdk \
+    python3-full python3-ipykernel \
     nodejs \
-    python3 python3-ipykernel \
-    kde-standard  openssh-server \
-    neofetch neovim nala \
     docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin \
-    flatpak plasma-discover-backend-flatpak \
     kubectl code
 
 # Post installation
