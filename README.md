@@ -1,4 +1,4 @@
-# Debian12 Configure
+# Debian Configure
 
 ### Description
 My Debian Bookworm configuration script after install
