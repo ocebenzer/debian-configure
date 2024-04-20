@@ -65,25 +65,3 @@ usermod -aG docker $USERNAME
 
 echo
 echo Done!
-echo You might want check if everything is ok:
-echo => run "'sudo dpkg-reconfigure lightdm'" and select sddm for kde-plasma as your default desktop environment, also select Plasma X11 over Plasma Wayland due to API issues
-echo => run "'docker run hello-world'" after reboot
-echo => ensure "'update-grub'" is completed properly
-
-echo => Add your favorite VSCode extensions:
-for pkg in "Git Graph" "Git Blame";
-do
-    echo "- $pkg"
-done
-
-echo => Install your favorite flatpak apps as non-root:\n
-for pkg in Flameshot Okular VLC Krita "OnlyOffice or LibreOffice" Drawio Zoom Discord "Telegram Desktop" Steam KolourPaint;
-do
-    echo "- $pkg"
-done
-
-echo => "Remove apt packages that you don't use":
-for pkg in kdeconnect kmail korganizer kaddressbook idle imagemagick akregato anthy kasumi "xiterm+thai" "libreoffice*";
-do
-    echo "- $pkg"
-done
