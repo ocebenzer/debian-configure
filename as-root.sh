@@ -30,11 +30,14 @@ pushd /home/$USERNAME/Downloads
     echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /' \
         > /etc/apt/sources.list.d/kubernetes.list
 
-    # VSCode GPG
+    # VSCode GPG @ref https://github.com/nodesource/distributions?tab=readme-ov-file#using-debian-as-root
     curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o /etc/apt/keyrings/microsoft-archive-keyring.gpg
     chmod 644 /etc/apt/keyrings/microsoft-archive-keyring.gpg
     echo "deb [arch=amd64,arm64,armhf signed-by=/usr/share/keyrings/microsoft-archive-keyring.gpg] https://packages.microsoft.com/repos/vscode stable main" \
         > /etc/apt/sources.list.d/vscode.list
+
+    # Debian GPG
+    curl -fsSL https://deb.nodesource.com/setup_22.x | bash - &&\
 popd
 
 apt update

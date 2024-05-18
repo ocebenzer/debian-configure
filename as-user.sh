@@ -3,10 +3,6 @@ if [ "$EUID" -e 0 ]
   exit
 fi
 
-# NodeJS @ref https://nodejs.org/en/download/package-manager
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-source ~/.bashrc
-nvm install 20
 corepack enable
 
 code \
